@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Niranjan | Embedded Systems & IoT Enthusiast</title>
+  <meta name="description" content="Portfolio of Niranjan — Electronics and Communication Engineering student passionate about Embedded Systems, IoT, and Robotics. Explore projects, skills, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-dot"></span>
+        Niranjan
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO / COVER PAGE ── -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot pulse"></span>
+        Electronics &amp; Communication Engineering
+      </div>
+      <h1 class="hero-name">Niranjan</h1>
+      <h2 class="hero-title">Embedded Systems &amp; IoT Enthusiast</h2>
+      <p class="hero-tagline">
+        <span class="tagline-line">— Where circuits meet intelligence,</span>
+        <span class="tagline-line"> and ideas become real devices.</span>
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="circuit-card">
+        <div class="circuit-header">
+          <span class="circuit-dot red"></span>
+          <span class="circuit-dot yellow"></span>
+          <span class="circuit-dot green"></span>
+          <span class="circuit-title">system.io</span>
+        </div>
+        <div class="circuit-body">
+          <div class="code-line"><span class="kw">const</span> <span class="var">engineer</span> = {</div>
+          <div class="code-line indent"><span class="key">name</span>: <span class="str">"Niranjan"</span>,</div>
+          <div class="code-line indent"><span class="key">focus</span>: [<span class="str">"IoT"</span>, <span class="str">"Embedded"</span>],</div>
+          <div class="code-line indent"><span class="key">passion</span>: <span class="str">"Building real things"</span>,</div>
+          <div class="code-line indent"><span class="key">status</span>: <span class="bool">true</span></div>
+          <div class="code-line">};</div>
+          <div class="code-line blink-line"><span class="kw">▋</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ME ── -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-label">01 — About</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            I am an <strong>Electronics and Communication Engineering</strong> student with a deep passion for
+            Embedded Systems, IoT, and Robotics — fields where hardware meets intelligent software to create
+            systems that interact with the real world.
+          </p>
+          <p>
+            I thrive on hands-on projects, transforming abstract concepts into working prototypes. From designing
+            circuit connections to troubleshooting complex electrical systems, I bring both technical discipline
+            and creative problem-solving to every build.
+          </p>
+          <p>
+            My experience spans repairing and reverse-engineering electronic gadgets, wiring, and integrating
+            sensors with microcontrollers — giving me a strong practical foundation that complements my academic knowledge.
+          </p>
+          <p>
+            I believe the most impactful engineers are those who can think at the intersection of hardware and software.
+            That's the engineer I'm becoming — one project, one circuit, one insight at a time.
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">6+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Years of Tinkering</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Curiosity</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card-wrap">
+            <div class="about-avatar">
+              <div class="avatar-placeholder">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="30" r="18" fill="rgba(99,179,237,0.2)" stroke="rgba(99,179,237,0.5)" stroke-width="1.5"/>
+                  <path d="M12 72c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="rgba(99,179,237,0.5)" stroke-width="1.5" fill="rgba(99,179,237,0.1)"/>
+                </svg>
+                <span>N</span>
+              </div>
+            </div>
+            <div class="trait-chips">
+              <span class="chip">🔧 Hands-on Builder</span>
+              <span class="chip">⚡ IoT Developer</span>
+              <span class="chip">🤖 Robotics</span>
+              <span class="chip">💡 Problem Solver</span>
+              <span class="chip">🛠️ Hardware Hacker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-label">02 — Skills</div>
+      <h2 class="section-title">Technical Expertise</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">📡</div>
+          <h3>Embedded &amp; IoT</h3>
+          <ul class="skill-list">
+            <li><span class="skill-name">Arduino / ESP8266 / ESP32</span><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></li>
+            <li><span class="skill-name">Raspberry Pi</span><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div></li>
+            <li><span class="skill-name">MQTT / HTTP Protocols</span><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></li>
+            <li><span class="skill-name">Sensor Integration</span><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></li>
+            <li><span class="skill-name">Real-Time Systems</span><div class="skill-bar"><div class="skill-fill" data-w="72"></div></div></li>
+            <li><span class="skill-name">Wireless Communication (Wi-Fi, BLE)</span><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">💻</div>
+          <h3>Programming</h3>
+          <ul class="skill-list">
+            <li><span class="skill-name">C / C++ (Embedded)</span><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></li>
+            <li><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></li>
+            <li><span class="skill-name">MicroPython</span><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div></li>
+            <li><span class="skill-name">OpenCV (Image Processing)</span><div class="skill-bar"><div class="skill-fill" data-w="68"></div></div></li>
+            <li><span class="skill-name">Bash / Shell Scripting</span><div class="skill-bar"><div class="skill-fill" data-w="60"></div></div></li>
+            <li><span class="skill-name">HTML / CSS (Basic Web)</span><div class="skill-bar"><div class="skill-fill" data-w="65"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">🔩</div>
+          <h3>Hardware Skills</h3>
+          <ul class="skill-list">
+            <li><span class="skill-name">Circuit Design &amp; Troubleshooting</span><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></li>
+            <li><span class="skill-name">PCB Layout (EasyEDA / KiCad)</span><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div></li>
+            <li><span class="skill-name">Soldering &amp; Wiring</span><div class="skill-bar"><div class="skill-fill" data-w="92"></div></div></li>
+            <li><span class="skill-name">Electronic Gadget Repair</span><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></li>
+            <li><span class="skill-name">Power Electronics Basics</span><div class="skill-bar"><div class="skill-fill" data-w="72"></div></div></li>
+            <li><span class="skill-name">Multimeter &amp; Oscilloscope</span><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-icon">🛠️</div>
+          <h3>Tools &amp; Platforms</h3>
+          <ul class="skill-list">
+            <li><span class="skill-name">Arduino IDE</span><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></li>
+            <li><span class="skill-name">VS Code</span><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></li>
+            <li><span class="skill-name">Proteus / Fritzing (Simulation)</span><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div></li>
+            <li><span class="skill-name">Blynk / Home Assistant</span><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></li>
+            <li><span class="skill-name">GitHub</span><div class="skill-bar"><div class="skill-fill" data-w="72"></div></div></li>
+            <li><span class="skill-name">YouTube / Content Creation</span><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-label">03 — Projects</div>
+      <h2 class="section-title">Things I've Built</h2>
+      <p class="section-sub">Each project represents a real-world challenge solved through hardware, software, and creative engineering.</p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card" id="proj-firefighting">
+          <div class="project-number">01</div>
+          <div class="project-icon">🔥</div>
+          <h3 class="project-title">Fire Fighting Robot</h3>
+          <p class="project-objective"><strong>Objective:</strong> Design an autonomous robot capable of detecting and extinguishing fire without human intervention.</p>
+          <div class="project-tags">
+            <span>Arduino UNO</span><span>Flame Sensor</span><span>Motor Driver L298N</span><span>DC Water Pump</span><span>Servo Motor</span>
+          </div>
+          <div class="project-detail">
+            <div class="detail-row">
+              <strong>⚙️ Working:</strong>
+              <p>Flame sensors mounted at front detect fire in the robot's proximity. The microcontroller processes sensor data and steers the robot toward the fire source. Once within range, the servo-mounted water pump activates to extinguish the flame.</p>
+            </div>
+            <div class="detail-row">
+              <strong>✨ Features:</strong>
+              <ul>
+                <li>Autonomous fire detection and navigation</li>
+                <li>360° flame sensing capability</li>
+                <li>Servo-controlled water spray nozzle</li>
+                <li>Obstacle avoidance using IR sensors</li>
+              </ul>
+            </div>
+            <div class="detail-row">
+              <strong>🌐 Applications:</strong>
+              <p>Industrial fire safety, unmanned firefighting in hazardous zones, research and demonstration.</p>
+            </div>
+          </div>
+          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" id="proj-solar">
+          <div class="project-number">02</div>
+          <div class="project-icon">☀️</div>
+          <h3 class="project-title">Solar Panel Lighting System</h3>
+          <p class="project-objective"><strong>Objective:</strong> Build an energy-efficient, solar-powered automatic lighting system for remote or off-grid areas.</p>
+          <div class="project-tags">
+            <span>Solar Panel</span><span>Lead-Acid Battery</span><span>LDR Sensor</span><span>Relay Module</span><span>Arduino</span>
+          </div>
+          <div class="project-detail">
+            <div class="detail-row">
+              <strong>⚙️ Working:</strong>
+              <p>Solar energy charges a battery bank during daylight. An LDR sensor detects ambient light levels and automatically switches the LEDs on at dusk and off at dawn through a relay-controlled circuit managed by the microcontroller.</p>
+            </div>
+            <div class="detail-row">
+              <strong>✨ Features:</strong>
+              <ul>
+                <li>Fully automatic day/night switching</li>
+                <li>Solar charge controller integration</li>
+                <li>Battery health monitoring</li>
+                <li>Zero electricity bill operation</li>
+              </ul>
+            </div>
+            <div class="detail-row">
+              <strong>🌐 Applications:</strong>
+              <p>Rural street lighting, agricultural farms, disaster relief camps, eco-friendly campuses.</p>
+            </div>
+          </div>
+          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" id="proj-homeauto">
+          <div class="project-number">03</div>
+          <div class="project-icon">🏠</div>
+          <h3 class="project-title">Home Automation System</h3>
+          <p class="project-objective"><strong>Objective:</strong> Create a smart home control system enabling remote monitoring and control of home appliances via smartphone.</p>
+          <div class="project-tags">
+            <span>ESP8266</span><span>Blynk App</span><span>Relay Module</span><span>DHT11</span><span>Wi-Fi</span>
+          </div>
+          <div class="project-detail">
+            <div class="detail-row">
+              <strong>⚙️ Working:</strong>
+              <p>The ESP8266 module connects to a home Wi-Fi network and communicates with the Blynk cloud platform. Users control appliances via a custom smartphone dashboard. Environmental sensors provide real-time temperature and humidity data.</p>
+            </div>
+            <div class="detail-row">
+              <strong>✨ Features:</strong>
+              <ul>
+                <li>Remote control from anywhere via internet</li>
+                <li>Real-time temperature &amp; humidity display</li>
+                <li>Scheduling and automation triggers</li>
+                <li>Voice assistant compatible (Google Home)</li>
+              </ul>
+            </div>
+            <div class="detail-row">
+              <strong>🌐 Applications:</strong>
+              <p>Smart homes, elderly care, energy management, security systems.</p>
+            </div>
+          </div>
+          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" id="proj-industrial">
+          <div class="project-number">04</div>
+          <div class="project-icon">🏭</div>
+          <h3 class="project-title">Industrial Safety System</h3>
+          <p class="project-objective"><strong>Objective:</strong> Develop a multi-sensor safety monitoring system that detects hazardous conditions and triggers real-time alerts in industrial environments.</p>
+          <div class="project-tags">
+            <span>Arduino</span><span>Gas Sensor MQ-2</span><span>Temperature Sensor</span><span>Buzzer &amp; LED</span><span>GSM Module</span>
+          </div>
+          <div class="project-detail">
+            <div class="detail-row">
+              <strong>⚙️ Working:</strong>
+              <p>Multiple sensors continuously monitor gas leakage, temperature, and humidity. When thresholds are exceeded, the system triggers audible and visual alarms while simultaneously sending SMS alerts to designated personnel via a GSM module.</p>
+            </div>
+            <div class="detail-row">
+              <strong>✨ Features:</strong>
+              <ul>
+                <li>Multi-hazard detection (gas, heat, fire)</li>
+                <li>Real-time SMS alert system</li>
+                <li>Automatic emergency shutdown relay</li>
+                <li>LCD status display panel</li>
+              </ul>
+            </div>
+            <div class="detail-row">
+              <strong>🌐 Applications:</strong>
+              <p>Chemical plants, laboratories, server rooms, manufacturing units, warehouses.</p>
+            </div>
+          </div>
+          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" id="proj-imgfire">
+          <div class="project-number">05</div>
+          <div class="project-icon">🎥</div>
+          <h3 class="project-title">Image Processing Based Fire Fighting System</h3>
+          <p class="project-objective"><strong>Objective:</strong> Build an advanced fire detection system using computer vision to identify flames through a camera feed and deploy automated suppression.</p>
+          <div class="project-tags">
+            <span>Raspberry Pi</span><span>OpenCV</span><span>Python</span><span>Camera Module</span><span>Servo + Pump</span>
+          </div>
+          <div class="project-detail">
+            <div class="detail-row">
+              <strong>⚙️ Working:</strong>
+              <p>A Raspberry Pi camera streams video to the OpenCV-powered Python script. The algorithm identifies fire-colored regions using HSV color thresholding. Upon detection, the system calculates the fire's position and controls servo motors to aim and activate the water pump.</p>
+            </div>
+            <div class="detail-row">
+              <strong>✨ Features:</strong>
+              <ul>
+                <li>Real-time fire detection via video feed</li>
+                <li>Computer vision-based flame localization</li>
+                <li>Precision servo-controlled targeting</li>
+                <li>Remote monitoring via SSH / web stream</li>
+              </ul>
+            </div>
+            <div class="detail-row">
+              <strong>🌐 Applications:</strong>
+              <p>Smart surveillance, advanced fire safety in server rooms, AI-driven safety systems.</p>
+            </div>
+          </div>
+          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" id="proj-numberplate">
+          <div class="project-number">06</div>
+          <div class="project-icon">🚗</div>
+          <h3 class="project-title">Number Plate Detection System</h3>
+          <p class="project-objective"><strong>Objective:</strong> Implement an automated vehicle number plate recognition system using image processing and OCR for real-time identification.</p>
+          <div class="project-tags">
+            <span>Python</span><span>OpenCV</span><span>Tesseract OCR</span><span>Raspberry Pi / PC</span><span>Camera</span>
+          </div>
+          <div class="project-detail">
+            <div class="detail-row">
+              <strong>⚙️ Working:</strong>
+              <p>The camera captures vehicle images. OpenCV applies edge detection, contour finding, and region-of-interest extraction to isolate the number plate. Tesseract OCR then converts the plate region into readable text, which is logged or compared against a database.</p>
+            </div>
+            <div class="detail-row">
+              <strong>✨ Features:</strong>
+              <ul>
+                <li>Automatic plate region extraction</li>
+                <li>OCR-based character recognition </li>
+                <li>Real-time video processing</li>
+                <li>Database integration for access control</li>
+              </ul>
+            </div>
+            <div class="detail-row">
+              <strong>🌐 Applications:</strong>
+              <p>Parking management, traffic monitoring, toll automation, vehicle entry control systems.</p>
+            </div>
+          </div>
+          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MAKER CIRCUIT ── -->
+  <section id="maker-circuit" class="section maker-section">
+    <div class="container">
+      <div class="section-label">04 — Special Initiative</div>
+      <div class="maker-hero">
+        <div class="maker-badge-wrap">
+          <div class="maker-badge">
+            <svg class="maker-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 24h4m8 0h4M24 16v4m0 8v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/>
+              <circle cx="12" cy="24" r="2" fill="currentColor"/>
+              <circle cx="36" cy="24" r="2" fill="currentColor"/>
+              <circle cx="24" cy="12" r="2" fill="currentColor"/>
+              <circle cx="24" cy="36" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+        <div class="maker-content">
+          <h2 class="maker-title">Maker Circuit</h2>
+          <p class="maker-subtitle">A Personal Electronics & IoT Initiative</p>
+          <p class="maker-desc">
+            <strong>Maker Circuit</strong> is my personal platform for building, experimenting, and sharing electronics and IoT projects.
+            Born from a desire to go beyond textbooks, it represents my commitment to hands-on learning and practical engineering.
+          </p>
+
+          <div class="maker-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">🔨</div>
+              <h4>Build</h4>
+              <p>Design and prototype real-world embedded systems and IoT solutions — from concept to working device.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🧪</div>
+              <h4>Experiment</h4>
+              <p>Test new components, explore unknown sensor integrations, and push the boundaries of what's possible on low-cost hardware.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">📢</div>
+              <h4>Share</h4>
+              <p>Document builds through tutorials, videos, and open-source code so others can learn and replicate projects.</p>
+            </div>
+          </div>
+
+          <div class="maker-vision">
+            <h4>🚀 Future Vision</h4>
+            <p>
+              Maker Circuit aims to grow into a recognized platform for student-led electronics education — featuring project tutorials,
+              circuit guides, product reviews, and a community of hands-on learners. The long-term goal is to bridge the gap between
+              academic theory and real-world hardware development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT MAKES ME DIFFERENT ── -->
+  <section id="different" class="section different-section">
+    <div class="container">
+      <div class="section-label">05 — Differentiators</div>
+      <h2 class="section-title">What Sets Me Apart</h2>
+      <p class="section-sub">Beyond qualifications — these are the qualities I bring to every project and team.</p>
+
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-num">01</div>
+          <div class="diff-icon">🔧</div>
+          <h3>Hands-On Project Builder</h3>
+          <p>I don't just study electronics — I build with it. From concept to working prototype, I take projects through the complete engineering cycle with real components and real constraints.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-num">02</div>
+          <div class="diff-icon">⚡</div>
+          <h3>Practical Electronics Skills</h3>
+          <p>Years of working with wiring, PCB design, soldering, and gadget repair have given me an intuitive understanding of electronics that goes far beyond simulation or theory.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-num">03</div>
+          <div class="diff-icon">🔍</div>
+          <h3>Troubleshooting Ability</h3>
+          <p>I excel at diagnosing hardware and software faults systematically — using multimeters, oscilloscopes, and debugging tools to isolate problems and implement solutions quickly.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-num">04</div>
+          <div class="diff-icon">🔗</div>
+          <h3>Hardware + Software Integration</h3>
+          <p>I work fluently at the intersection of hardware and software — writing firmware in C/C++, building Python scripts for computer vision, and connecting devices to the cloud through IoT platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-label">06 — Education</div>
+      <h2 class="section-title">Academic Background</h2>
+
+      <div class="edu-timeline">
+
+        <div class="edu-item current">
+          <div class="edu-marker">
+            <div class="edu-dot"></div>
+            <div class="edu-line"></div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-badge current-badge">Current</div>
+            <h3>B.E. Electronics and Communication Engineering</h3>
+            <p class="edu-institution">📍 [Institution Name] — [City, State]</p>
+            <p class="edu-year">📅 [Year of Joining] – [Expected Graduation Year]</p>
+            <p class="edu-cgpa">🎓 CGPA: [X.X / 10.0]</p>
+            <div class="edu-highlights">
+              <span>Embedded Systems</span>
+              <span>Signal Processing</span>
+              <span>Microcontrollers</span>
+              <span>IoT Fundamentals</span>
+              <span>Robotics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-marker">
+            <div class="edu-dot"></div>
+            <div class="edu-line"></div>
+          </div>
+          <div class="edu-card">
+            <h3>Higher Secondary (12th Grade)</h3>
+            <p class="edu-institution">📍 [School Name] — [City, State]</p>
+            <p class="edu-year">📅 [Year]</p>
+            <p class="edu-cgpa">📊 Percentage / Grade: [XX%]</p>
+            <div class="edu-highlights">
+              <span>Physics</span>
+              <span>Chemistry</span>
+              <span>Mathematics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-marker">
+            <div class="edu-dot"></div>
+          </div>
+          <div class="edu-card">
+            <h3>Secondary (10th Grade)</h3>
+            <p class="edu-institution">📍 [School Name] — [City, State]</p>
+            <p class="edu-year">📅 [Year]</p>
+            <p class="edu-cgpa">📊 Percentage / Grade: [XX%]</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-label">07 — Contact</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-sub">Open to collaborations, internships, project discussions, and interesting engineering conversations.</p>
+
+      <div class="contact-grid">
+        <a href="tel:+91XXXXXXXXXX" class="contact-card" id="contact-phone">
+          <div class="contact-icon">📞</div>
+          <div class="contact-info">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91 XXXXXXXXXX</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+        <a href="mailto:k.niranjan140506@gmail.com" class="contact-card" id="contact-email">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">k.niranjan140506@gmail.com</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+        <a href="https://github.com/niranjan322" target="_blank" rel="noopener" class="contact-card" id="contact-github">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/niranjan322</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+        <a href="https://youtube.com/" target="_blank" rel="noopener" class="contact-card" id="contact-youtube">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">YouTube</span>
+            <span class="contact-value">Maker Circuit Channel</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-name">Niranjan</p>
+        <p class="footer-copy">© 2025 · Built with passion for engineering</p>
+        <p class="footer-tagline">Embedded Systems &amp; IoT Enthusiast</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
