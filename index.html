@@ -13,6 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-modal.css" />
 </head>
 
 <body>
@@ -764,7 +765,64 @@
     </div>
   </footer>
 
+  <!-- ── PROJECT DETAIL MODAL ── -->
+  <div id="project-modal-overlay" class="pm-overlay">
+    <div class="pm-panel">
+      <div class="pm-header">
+        <div class="pm-header-icon" id="pm-icon">🏭</div>
+        <div class="pm-header-text">
+          <h2 id="pm-title">Project Title</h2>
+          <p id="pm-sub">Subtitle</p>
+        </div>
+        <button class="pm-close" onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="pm-tabs">
+        <button class="pm-tab active" data-tab="overview">📋 Overview</button>
+        <button class="pm-tab" data-tab="diagram">🔷 Block Diagram</button>
+        <button class="pm-tab" data-tab="components">🔩 Components</button>
+        <button class="pm-tab" data-tab="connections">🔌 Connections</button>
+        <button class="pm-tab" data-tab="code">💻 Code</button>
+        <button class="pm-tab" data-tab="working">⚙️ Working</button>
+      </div>
+      <div class="pm-content">
+        <div id="pm-overview" class="pm-section active">
+          <p class="pm-section-title">Project Overview</p>
+          <p class="pm-overview-desc" id="pm-desc"></p>
+          <p class="pm-section-title">Key Features</p>
+          <div class="pm-feature-list" id="pm-features"></div>
+          <div class="pm-spacer"></div>
+          <p class="pm-section-title">Tech Stack</p>
+          <div class="pm-tag-row" id="pm-tags"></div>
+        </div>
+        <div id="pm-diagram-section" class="pm-section">
+          <p class="pm-section-title">Block Diagram</p>
+          <div class="pm-diagram" id="pm-diagram"></div>
+        </div>
+        <div id="pm-components" class="pm-section">
+          <p class="pm-section-title">Components List</p>
+        </div>
+        <div id="pm-connections" class="pm-section">
+          <p class="pm-section-title">Wiring &amp; Connections</p>
+        </div>
+        <div id="pm-code-section" class="pm-section">
+          <p class="pm-section-title">Code Snippet</p>
+          <div class="pm-code-block">
+            <div class="pm-code-bar">
+              <div class="pm-dot r"></div><div class="pm-dot y"></div><div class="pm-dot g"></div>
+              <span id="pm-code-lang">Arduino / C++</span>
+            </div>
+            <pre id="pm-code"></pre>
+          </div>
+        </div>
+        <div id="pm-working" class="pm-section">
+          <p class="pm-section-title">How It Works</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="project-modal.js"></script>
 </body>
 
 </html>
