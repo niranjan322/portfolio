@@ -371,9 +371,21 @@ img { display: block; max-width: 100%; }
 .about-section { background: var(--bg-base); }
 .about-grid {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 320px 1fr;
+  gap: 56px;
+  align-items: stretch;  /* photo stretches to match text height */
+  margin-bottom: 36px;
+}
+
+/* Photo column — fills exactly the height of the text column */
+.about-photo-col {
+  display: flex;
+}
+.about-photo-col .about-avatar-portrait {
+  width: 100%;
+  flex: 1;
+  aspect-ratio: unset;   /* remove fixed ratio — let height be driven by text */
+  min-height: 420px;
 }
 .about-lead {
   font-size: 1.12rem;
@@ -426,6 +438,15 @@ img { display: block; max-width: 100%; }
   width: 100%;
 }
 
+/* Full-width horizontal chip row below the about grid */
+.about-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  padding-top: 8px;
+}
+
 /* Portrait photo styles */
 .about-avatar-portrait {
   width: 100%;
@@ -434,7 +455,7 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   border: 2px solid var(--border-glow);
   box-shadow: 0 8px 60px rgba(77,168,255,0.18), 0 0 0 1px rgba(77,168,255,0.08);
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4;   /* default — overridden inside .about-photo-col */
   background: var(--bg-card);
   transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
@@ -1092,9 +1113,10 @@ img { display: block; max-width: 100%; }
   }
   .hero-visual { width: 100%; display: flex; justify-content: center; }
   .circuit-card { width: 100%; max-width: 440px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-visual { order: -1; }
-  .about-avatar-portrait { max-width: 320px; margin: 0 auto; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; align-items: start; }
+  .about-photo-col { justify-content: center; }
+  .about-photo-col .about-avatar-portrait { max-width: 300px; aspect-ratio: 3 / 4; min-height: unset; }
+  .about-chips-row { justify-content: center; }
   .maker-hero { flex-direction: column; gap: 32px; }
   .maker-pillars { grid-template-columns: 1fr; }
 }
