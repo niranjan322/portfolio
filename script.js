@@ -61,13 +61,13 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 skillFills.forEach(el => skillObserver.observe(el));
 
-/* ── Project Toggle → opens Detail Modal ── */
-document.querySelectorAll('.project-toggle').forEach(btn => {
-  btn.addEventListener('click', (e) => {
+/* ── Project Click → navigates to Project Details Page ── */
+document.querySelectorAll('.project-toggle, .project-card').forEach(el => {
+  el.addEventListener('click', (e) => {
     e.stopPropagation();
-    const card = btn.closest('.project-card');
-    if (card && typeof openModal === 'function') {
-      openModal(card.id);
+    const card = el.closest('.project-card');
+    if (card) {
+      window.location.href = 'project.html?id=' + card.id;
     }
   });
 });

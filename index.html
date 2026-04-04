@@ -303,7 +303,7 @@
               <p>Manufacturing plants, factory floors, industrial automation, predictive maintenance systems.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
         <!-- Project 2 -->
@@ -338,7 +338,7 @@
               <p>Industrial fire safety, unmanned firefighting in hazardous zones, research and demonstration.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
         <!-- Project 3 -->
@@ -373,7 +373,7 @@
               <p>Rural street lighting, agricultural farms, disaster relief camps, eco-friendly campuses.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
         <!-- Project 4 -->
@@ -407,7 +407,7 @@
               <p>Smart homes, elderly care, energy management, security systems.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
         <!-- Project 5 -->
@@ -442,7 +442,7 @@
               <p>Chemical plants, laboratories, server rooms, manufacturing units, warehouses.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
         <!-- Project 6 -->
@@ -477,7 +477,7 @@
               <p>Smart surveillance, advanced fire safety in server rooms, AI-driven safety systems.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
         <!-- Project 7 -->
@@ -512,7 +512,7 @@
               <p>Parking management, traffic monitoring, toll automation, vehicle entry control systems.</p>
             </div>
           </div>
-          <button class="project-toggle" aria-expanded="false">View Details ↓</button>
+          <button class="project-toggle" aria-expanded="false">View Full Details →</button>
         </div>
 
       </div>
@@ -716,7 +716,7 @@
           </div>
           <div class="contact-arrow">→</div>
         </a>
-        <a href="https://linkedin.com/in/niranjan-k" target="_blank" rel="noopener" class="contact-card" id="contact-linkedin">
+        <a href="https://www.linkedin.com/in/niranjan-k-50b2682a6?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="contact-card" id="contact-linkedin">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -765,64 +765,9 @@
     </div>
   </footer>
 
-  <!-- ── PROJECT DETAIL MODAL ── -->
-  <div id="project-modal-overlay" class="pm-overlay">
-    <div class="pm-panel">
-      <div class="pm-header">
-        <div class="pm-header-icon" id="pm-icon">🏭</div>
-        <div class="pm-header-text">
-          <h2 id="pm-title">Project Title</h2>
-          <p id="pm-sub">Subtitle</p>
-        </div>
-        <button class="pm-close" onclick="closeModal()" aria-label="Close">✕</button>
-      </div>
-      <div class="pm-tabs">
-        <button class="pm-tab active" data-tab="overview">📋 Overview</button>
-        <button class="pm-tab" data-tab="diagram">🔷 Block Diagram</button>
-        <button class="pm-tab" data-tab="components">🔩 Components</button>
-        <button class="pm-tab" data-tab="connections">🔌 Connections</button>
-        <button class="pm-tab" data-tab="code">💻 Code</button>
-        <button class="pm-tab" data-tab="working">⚙️ Working</button>
-      </div>
-      <div class="pm-content">
-        <div id="pm-overview" class="pm-section active">
-          <p class="pm-section-title">Project Overview</p>
-          <p class="pm-overview-desc" id="pm-desc"></p>
-          <p class="pm-section-title">Key Features</p>
-          <div class="pm-feature-list" id="pm-features"></div>
-          <div class="pm-spacer"></div>
-          <p class="pm-section-title">Tech Stack</p>
-          <div class="pm-tag-row" id="pm-tags"></div>
-        </div>
-        <div id="pm-diagram-section" class="pm-section">
-          <p class="pm-section-title">Block Diagram</p>
-          <div class="pm-diagram" id="pm-diagram"></div>
-        </div>
-        <div id="pm-components" class="pm-section">
-          <p class="pm-section-title">Components List</p>
-        </div>
-        <div id="pm-connections" class="pm-section">
-          <p class="pm-section-title">Wiring &amp; Connections</p>
-        </div>
-        <div id="pm-code-section" class="pm-section">
-          <p class="pm-section-title">Code Snippet</p>
-          <div class="pm-code-block">
-            <div class="pm-code-bar">
-              <div class="pm-dot r"></div><div class="pm-dot y"></div><div class="pm-dot g"></div>
-              <span id="pm-code-lang">Arduino / C++</span>
-            </div>
-            <pre id="pm-code"></pre>
-          </div>
-        </div>
-        <div id="pm-working" class="pm-section">
-          <p class="pm-section-title">How It Works</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Project details are now loaded in project.html -->
 
   <script src="script.js"></script>
-  <script src="project-modal.js"></script>
 </body>
 
 </html>

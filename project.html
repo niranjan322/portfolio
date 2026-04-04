@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details | K. Niranjan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-modal.css" />
+  <style>
+    /* Adjust modal styles for full page */
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    nav {
+      background-color: var(--surface);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .page-container {
+      flex: 1;
+      max-width: 1000px;
+      margin: 2rem auto;
+      width: 90%;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Hide the close button on full page */
+    .pm-close { display: none; }
+    /* Override absolute positioning of pm-panel */
+    .pm-panel {
+      position: relative;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      border-radius: 0;
+      transform: none;
+      border: none;
+    }
+    #error-msg {
+      text-align: center;
+      padding: 4rem;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    <div style="font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem;">K. Niranjan</div>
+  </nav>
+
+  <div class="page-container" id="main-container">
+    <div id="error-msg" style="display: none;">Project not found.</div>
+    <div class="pm-panel" id="project-panel" style="display: none;">
+      <div class="pm-header">
+        <div class="pm-header-icon" id="pm-icon"></div>
+        <div class="pm-header-text">
+          <h2 id="pm-title"></h2>
+          <p id="pm-sub"></p>
+        </div>
+      </div>
+      <div class="pm-tabs">
+        <button class="pm-tab active" data-tab="overview">📋 Overview</button>
+        <button class="pm-tab" data-tab="diagram">🔷 Block Diagram</button>
+        <button class="pm-tab" data-tab="components">🔩 Components</button>
+        <button class="pm-tab" data-tab="connections">🔌 Connections</button>
+        <button class="pm-tab" data-tab="code">💻 Code</button>
+        <button class="pm-tab" data-tab="working">⚙️ Working</button>
+      </div>
+      <div class="pm-content">
+        <div id="pm-overview" class="pm-section active">
+          <p class="pm-section-title">Project Overview</p>
+          <p class="pm-overview-desc" id="pm-desc"></p>
+          <p class="pm-section-title">Key Features</p>
+          <div class="pm-feature-list" id="pm-features"></div>
+          <div class="pm-spacer"></div>
+          <p class="pm-section-title">Tech Stack</p>
+          <div class="pm-tag-row" id="pm-tags"></div>
+        </div>
+        <div id="pm-diagram-section" class="pm-section">
+          <p class="pm-section-title">Block Diagram</p>
+          <div class="pm-diagram" id="pm-diagram"></div>
+        </div>
+        <div id="pm-components" class="pm-section">
+          <p class="pm-section-title">Components List</p>
+        </div>
+        <div id="pm-connections" class="pm-section">
+          <p class="pm-section-title">Wiring &amp; Connections</p>
+        </div>
+        <div id="pm-code-section" class="pm-section">
+          <p class="pm-section-title">Code Snippet</p>
+          <div class="pm-code-block">
+            <div class="pm-code-bar">
+              <div class="pm-dot r"></div><div class="pm-dot y"></div><div class="pm-dot g"></div>
+              <span id="pm-code-lang">Arduino / Python</span>
+            </div>
+            <pre id="pm-code"></pre>
+          </div>
+        </div>
+        <div id="pm-working" class="pm-section">
+          <p class="pm-section-title">How It Works</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="project-modal.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projId = urlParams.get('id');
+
+      const err = document.getElementById('error-msg');
+      const panel = document.getElementById('project-panel');
+
+      if (projId && typeof PROJECTS !== 'undefined' && PROJECTS[projId]) {
+        // We can just reuse openModal since it calls renderModal and switchTab
+        // We also want to display the panel
+        panel.style.display = 'block';
+        openModal(projId);
+      } else {
+        err.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

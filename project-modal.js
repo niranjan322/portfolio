@@ -608,28 +608,34 @@ cap = cv2.VideoCapture(<span class="num">0</span>)
 
 /* ─── Modal Open/Close ─── */
 const overlay = document.getElementById('project-modal-overlay');
-const panel   = overlay.querySelector('.pm-panel');
+const panel   = overlay ? overlay.querySelector('.pm-panel') : document.querySelector('.pm-panel');
 
 function openModal(projectId) {
   const p = PROJECTS[projectId];
   if (!p) return;
   renderModal(p);
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  if (overlay) {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
   switchTab('overview');
 }
 
 function closeModal() {
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
+  if (overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 }
 
-overlay.addEventListener('click', e => {
-  if (e.target === overlay) closeModal();
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
+if (overlay) {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
 
 /* ─── Render ─── */
 function renderModal(p) {
