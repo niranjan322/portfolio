@@ -61,23 +61,13 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 skillFills.forEach(el => skillObserver.observe(el));
 
-/* ── Project Toggle ── */
+/* ── Project Toggle → opens Detail Modal ── */
 document.querySelectorAll('.project-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card   = btn.closest('.project-card');
-    const detail = card.querySelector('.project-detail');
-    const isOpen = detail.classList.contains('open');
-
-    if (isOpen) {
-      detail.classList.remove('open');
-      btn.textContent = 'View Details ↓';
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    } else {
-      detail.classList.add('open');
-      btn.textContent = 'Hide Details ↑';
-      btn.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const card = btn.closest('.project-card');
+    if (card && typeof openModal === 'function') {
+      openModal(card.id);
     }
   });
 });
