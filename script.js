@@ -147,11 +147,172 @@ console.log(
 `%c
   ____  _  _  _____  ____    ____  _  _  ____  __   _  _  ____
  (_  _)( )( )(  _  )(_  _)  / ___)( )( )(_  _)(  ) ( )( )(_  _)
-  _)(_  )()(  )(_)(   )(    ( (__  )()(   )(   /__\  )()(   )(
- (____)(_/\_)(_____)  (__) __ \___)(_____)(__) (__)(__)(__) (__)
+  _)(_  )()(  )(_)(   )(    ( (__  )()(   )(   /__\\  )()(   )(
+ (____)(_/\\_)(_____)  (__) __ \\___)(_____)(__) (__)(__)(__) (__)
                                |__|
   Portfolio of Niranjan — Embedded Systems & IoT Enthusiast
   Built with raw HTML/CSS/JS — No frameworks, just circuits.
 `,
 'color: #4da8ff; font-family: monospace;'
 );
+
+/* ═══════════════════════════════════════════
+   UI/UX ENHANCEMENTS
+   ═══════════════════════════════════════════ */
+
+/* ── Custom Cursor ── */
+(function() {
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  if (!dot || !ring) return;
+
+  let ringX = 0, ringY = 0;
+  let dotX = 0, dotY = 0;
+
+  document.addEventListener('mousemove', e => {
+    dotX = e.clientX;
+    dotY = e.clientY;
+    dot.style.left  = dotX + 'px';
+    dot.style.top   = dotY + 'px';
+  });
+
+  function animateRing() {
+    ringX += (dotX - ringX) * 0.12;
+    ringY += (dotY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+})();
+
+/* ── Floating Particles ── */
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const PARTICLE_COUNT = 55;
+  const particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.5 + 0.3,
+    vx: (Math.random() - 0.5) * 0.3,
+    vy: (Math.random() - 0.5) * 0.3,
+    alpha: Math.random() * 0.5 + 0.15,
+    color: Math.random() > 0.5 ? '77,168,255' : '124,92,252'
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw connection lines
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(77,168,255,${0.06 * (1 - dist/130)})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+      ctx.fill();
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── Scroll to Top ── */
+(function() {
+  const btn = document.getElementById('scroll-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+/* ── Typed Text Hero ── */
+(function() {
+  const el = document.getElementById('typed-text');
+  if (!el) return;
+
+  const phrases = [
+    'Embedded Systems Engineer',
+    'IoT Developer',
+    'Circuit Designer',
+    'Firmware Developer',
+    'Robotics Enthusiast'
+  ];
+
+  let phraseIdx = 0, charIdx = 0, deleting = false;
+
+  function type() {
+    const current = phrases[phraseIdx];
+    if (deleting) {
+      el.textContent = current.slice(0, charIdx--);
+      if (charIdx < 0) {
+        deleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        setTimeout(type, 400);
+        return;
+      }
+      setTimeout(type, 45);
+    } else {
+      el.textContent = current.slice(0, charIdx++);
+      if (charIdx > current.length) {
+        deleting = true;
+        setTimeout(type, 1800);
+        return;
+      }
+      setTimeout(type, 80);
+    }
+  }
+  setTimeout(type, 800);
+})();
+
+/* ── Skill fill dot visibility on animate ── */
+document.querySelectorAll('.skill-fill').forEach(fill => {
+  const observer = new MutationObserver(() => {
+    const w = parseFloat(fill.style.width);
+    if (w > 0) fill.classList.add('animated');
+  });
+  observer.observe(fill, { attributes: true, attributeFilter: ['style'] });
+});
