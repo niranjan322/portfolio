@@ -51,9 +51,26 @@ const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const target = entry.target;
-      const width  = target.dataset.w;
+      const width  = parseInt(target.dataset.w, 10);
+      const pctEl  = target.closest('li')?.querySelector('.skill-pct');
+
       setTimeout(() => {
         target.style.width = width + '%';
+
+        // Count-up animation for the percentage label
+        if (pctEl) {
+          const duration = 1200; // ms — matches CSS transition
+          const startTime = performance.now();
+          function tick(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out quad
+            const eased = 1 - (1 - progress) * (1 - progress);
+            pctEl.textContent = Math.round(eased * width) + '%';
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }
       }, 200);
       skillObserver.unobserve(target);
     }
