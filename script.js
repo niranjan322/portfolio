@@ -61,13 +61,21 @@ const skillObserver = new IntersectionObserver((entries) => {
         if (pctEl) {
           const duration = 1200; // ms — matches CSS transition
           const startTime = performance.now();
-          function tick(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+          
+          function tick() {
+            const elapsed = performance.now() - startTime;
+            let progress = elapsed / duration;
+            if (progress > 1) progress = 1;
+            
             // ease-out quad
             const eased = 1 - (1 - progress) * (1 - progress);
             pctEl.textContent = Math.round(eased * width) + '%';
-            if (progress < 1) requestAnimationFrame(tick);
+            
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              pctEl.textContent = width + '%'; // Ensure final exact value
+            }
           }
           requestAnimationFrame(tick);
         }

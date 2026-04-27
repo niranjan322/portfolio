@@ -588,18 +588,23 @@ img { display: block; max-width: 100%; }
 }
 .skill-name { font-size: 0.88rem; color: var(--text-2); }
 .skill-pct {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  transform: translateX(50%);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.04em;
-  background: rgba(77,168,255,0.08);
-  border: 1px solid rgba(77,168,255,0.18);
+  background: var(--bg-card); /* Add background to cover grid lines if any */
+  border: 1px solid rgba(77,168,255,0.3); /* Slightly more visible border */
   border-radius: 50px;
   padding: 1px 8px;
   min-width: 42px;
   text-align: center;
   transition: color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Pop out effect */
 }
 .skill-bar {
   height: 5px;
