@@ -692,6 +692,68 @@ sudo tailscale up
       ['Tailscale VPN','Installed Tailscale on the NAS and client devices to create a secure, zero-config mesh VPN.'],
       ['Access','Files can now be accessed securely from anywhere using Android phones or Linux PCs via the Tailscale IP.'],
     ]
+  },
+
+  'proj-streaming': {
+    icon: '📡', title: 'Low-Latency Media Streaming Server',
+    subtitle: 'OBS Studio · MediaMTX · VLC',
+    tags: ['OBS Studio','MediaMTX','VLC','Streaming','Networking'],
+    desc: 'Established a low-latency local media streaming server using MediaMTX as a real-time media server, OBS Studio as the stream encoder, and VLC for client playback.',
+    features: [
+      ['⚡','Ultra-low latency video streaming'],
+      ['🌐','Support for multiple streaming protocols (RTSP, RTMP, HLS, WebRTC)'],
+      ['🎛️','Lightweight media server configuration (MediaMTX)'],
+      ['🏠','Local network streaming without external cloud reliance'],
+    ],
+    diagram: `<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="12" fill="#a0aec0">
+      <defs><marker id="i" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#4da8ff"/></marker></defs>
+      <rect x="50" y="80" width="140" height="60" rx="8" fill="#0f1629" stroke="#7c5cfc" stroke-width="1.5"/>
+      <text x="120" y="106" text-anchor="middle" fill="#edf2ff" font-weight="bold">OBS Studio</text>
+      <text x="120" y="122" text-anchor="middle" font-size="10">Stream Encoder</text>
+      <rect x="280" y="80" width="140" height="60" rx="8" fill="#0f1629" stroke="#4da8ff" stroke-width="1.5"/>
+      <text x="350" y="106" text-anchor="middle" fill="#edf2ff" font-weight="bold">MediaMTX</text>
+      <text x="350" y="122" text-anchor="middle" font-size="10">Media Server</text>
+      <rect x="510" y="80" width="140" height="60" rx="8" fill="#0f1629" stroke="#f78c6c" stroke-width="1.5"/>
+      <text x="580" y="106" text-anchor="middle" fill="#edf2ff" font-weight="bold">VLC Player</text>
+      <text x="580" y="122" text-anchor="middle" font-size="10">Client Playback</text>
+      <line x1="190" y1="110" x2="272" y2="110" stroke="#4da8ff" stroke-width="1.5" marker-end="url(#i)"/>
+      <line x1="420" y1="110" x2="502" y2="110" stroke="#f78c6c" stroke-width="1.5" marker-end="url(#i)"/>
+      <text x="231" y="100" text-anchor="middle" fill="#546e7a" font-size="10">RTMP/RTSP</text>
+      <text x="461" y="100" text-anchor="middle" fill="#546e7a" font-size="10">RTSP/WebRTC</text>
+    </svg>`,
+    components: [
+      ['OBS Studio','1','Encoding / Broadcasting','Free'],
+      ['MediaMTX','1','Media Routing Server','Free'],
+      ['VLC Media Player','1','Stream Playback','Free'],
+      ['Host PC','1','Run MediaMTX','Existing'],
+      ['Client Device','1','Watch Stream','Existing'],
+    ],
+    connections: [
+      ['Camera/Screen','→','OBS Studio'],
+      ['OBS Stream','→','MediaMTX (RTMP)'],
+      ['MediaMTX','→','Local Network'],
+      ['Local Network','→','VLC Player'],
+    ],
+    code: \`<span class="cm"># Basic MediaMTX setup (mediamtx.yml)</span>
+paths:
+  all:
+    readUser: 
+    readPass: 
+    readIPs: []
+
+<span class="cm"># OBS Custom Streaming Server</span>
+<span class="cm"># URL: rtmp://localhost:1935/</span>
+<span class="cm"># Stream Key: mystream</span>
+
+<span class="cm"># VLC Network Stream URL</span>
+<span class="cm"># rtsp://[server-ip]:8554/mystream</span>\`,
+    steps: [
+      ['Setup Server','Downloaded and ran the MediaMTX executable to start the lightweight RTSP/RTMP media server on the host machine.'],
+      ['Configure OBS','Set up OBS Studio to capture video/audio and configured the stream settings to push to the local MediaMTX server via RTMP.'],
+      ['Broadcast','Started the stream in OBS, pushing live low-latency media to MediaMTX.'],
+      ['Client Playback','Opened VLC Media Player on a client device, navigated to Network Stream, and connected to the RTSP stream URL.'],
+      ['Monitor','Verified the stream played successfully with ultra-low latency over the local network.'],
+    ]
   }
 };
 
