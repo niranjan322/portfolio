@@ -603,6 +603,95 @@ cap = cv2.VideoCapture(<span class="num">0</span>)
       ['Plate Isolate','4-sided polygon approx = likely number plate. Bounding rect extracts plate ROI.'],
       ['OCR','Tesseract runs image_to_string on the plate ROI. Output cleaned and logged to database.'],
     ]
+  },
+
+  'proj-diy-nas': {
+    icon: '💾', title: 'DIY Network Attached Storage (NAS) Server',
+    subtitle: 'Linux Mint · Samba (SMB) · Tailscale VPN',
+    tags: ['Linux Mint','Samba','Tailscale VPN','Networking','System Admin'],
+    desc: 'I built a Network Attached Storage (NAS) server using an old laptop running Linux Mint, Samba (SMB), a 62 GB USB drive, and a 458 GB internal HDD. Configured secure local and remote file access using Tailscale VPN, enabling seamless file sharing across devices from anywhere.',
+    features: [
+      ['📁','Network-based file sharing using Samba (SMB)'],
+      ['💽','Shared USB drive and internal HDD as NAS storage'],
+      ['🔒','Secure remote access through Tailscale VPN'],
+      ['📱','Access from Android phones and Linux systems'],
+      ['⚙️','Multi-storage management with centralized access'],
+      ['🔑','User authentication and access control'],
+    ],
+    diagram: `<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="12" fill="#a0aec0">
+      <defs><marker id="h" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#4da8ff"/></marker></defs>
+      <rect x="250" y="80" width="200" height="80" rx="8" fill="#0f1629" stroke="#7c5cfc" stroke-width="1.5"/>
+      <text x="350" y="110" text-anchor="middle" fill="#edf2ff" font-weight="bold">Old Laptop (NAS)</text>
+      <text x="350" y="126" text-anchor="middle" font-size="10">Linux Mint + Samba</text>
+      <text x="350" y="142" text-anchor="middle" font-size="10">Tailscale VPN</text>
+      
+      <rect x="50" y="50" width="120" height="50" rx="8" fill="#0f1629" stroke="#4da8ff" stroke-width="1.5"/>
+      <text x="110" y="72" text-anchor="middle" fill="#edf2ff" font-weight="bold">Android Phone</text>
+      <text x="110" y="88" text-anchor="middle" font-size="10">Remote Access</text>
+
+      <rect x="50" y="140" width="120" height="50" rx="8" fill="#0f1629" stroke="#00e5b3" stroke-width="1.5"/>
+      <text x="110" y="162" text-anchor="middle" fill="#edf2ff" font-weight="bold">Linux PC</text>
+      <text x="110" y="178" text-anchor="middle" font-size="10">Local Access</text>
+
+      <rect x="530" y="50" width="120" height="50" rx="8" fill="#0f1629" stroke="#f78c6c" stroke-width="1.5"/>
+      <text x="590" y="72" text-anchor="middle" fill="#edf2ff" font-weight="bold">USB Drive</text>
+      <text x="590" y="88" text-anchor="middle" font-size="10">62 GB</text>
+
+      <rect x="530" y="140" width="120" height="50" rx="8" fill="#0f1629" stroke="#febc2e" stroke-width="1.5"/>
+      <text x="590" y="162" text-anchor="middle" fill="#edf2ff" font-weight="bold">Internal HDD</text>
+      <text x="590" y="178" text-anchor="middle" font-size="10">458 GB</text>
+
+      <line x1="170" y1="75" x2="242" y2="100" stroke="#4da8ff" stroke-width="1.5" marker-end="url(#h)"/>
+      <line x1="170" y1="165" x2="242" y2="140" stroke="#00e5b3" stroke-width="1.5" marker-end="url(#h)"/>
+      
+      <line x1="450" y1="100" x2="522" y2="75" stroke="#f78c6c" stroke-width="1.5" marker-end="url(#h)"/>
+      <line x1="450" y1="140" x2="522" y2="165" stroke="#febc2e" stroke-width="1.5" marker-end="url(#h)"/>
+    </svg>`,
+    components: [
+      ['Old Laptop','1','Server Hardware','Repurposed'],
+      ['USB Drive','1','62 GB External Storage','Existing'],
+      ['Internal HDD','1','458 GB Storage','Existing'],
+      ['Linux Mint','1','Operating System','Free'],
+      ['Samba (SMB)','1','File Sharing Protocol','Free'],
+      ['Tailscale VPN','1','Secure Remote Access','Free'],
+    ],
+    connections: [
+      ['Laptop','→','Home Wi-Fi/Ethernet'],
+      ['USB Drive','→','Laptop USB Port'],
+      ['Internal HDD','→','Laptop SATA'],
+      ['Tailscale Network','→','All client devices'],
+      ['Samba Service','→','Local Network (SMB)'],
+    ],
+    code: `<span class="cm"># DIY NAS - Key Configuration Steps</span>
+
+<span class="cm"># 1. Install Samba</span>
+sudo apt update
+sudo apt install samba
+
+<span class="cm"># 2. Configure Samba (edit /etc/samba/smb.conf)</span>
+[NAS_Storage]
+   path = /media/nas_drive
+   read only = no
+   browsable = yes
+   valid users = @nas_users
+
+<span class="cm"># 3. Add user and set SMB password</span>
+sudo smbpasswd -a username
+sudo systemctl restart smbd
+
+<span class="cm"># 4. Install Tailscale for Remote Access</span>
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+
+<span class="cm"># 5. Access from another device via Tailscale IP</span>
+<span class="cm"># smb://[tailscale-ip]/NAS_Storage</span>`,
+    steps: [
+      ['Setup OS','Installed Linux Mint on the old laptop to serve as a lightweight, stable server environment.'],
+      ['Storage Mount','Formatted and permanently mounted the 62 GB USB drive and 458 GB internal HDD via /etc/fstab.'],
+      ['Samba Config','Installed and configured Samba (SMB) to share the mounted directories over the local network.'],
+      ['Tailscale VPN','Installed Tailscale on the NAS and client devices to create a secure, zero-config mesh VPN.'],
+      ['Access','Files can now be accessed securely from anywhere using Android phones or Linux PCs via the Tailscale IP.'],
+    ]
   }
 };
 
