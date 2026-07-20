@@ -734,7 +734,7 @@ sudo tailscale up
       ['MediaMTX','→','Local Network'],
       ['Local Network','→','VLC Player'],
     ],
-    code: \`<span class="cm"># Basic MediaMTX setup (mediamtx.yml)</span>
+    code: `<span class="cm"># Basic MediaMTX setup (mediamtx.yml)</span>
 paths:
   all:
     readUser: 
@@ -746,7 +746,7 @@ paths:
 <span class="cm"># Stream Key: mystream</span>
 
 <span class="cm"># VLC Network Stream URL</span>
-<span class="cm"># rtsp://[server-ip]:8554/mystream</span>\`,
+<span class="cm"># rtsp://[server-ip]:8554/mystream</span>`,
     steps: [
       ['Setup Server','Downloaded and ran the MediaMTX executable to start the lightweight RTSP/RTMP media server on the host machine.'],
       ['Configure OBS','Set up OBS Studio to capture video/audio and configured the stream settings to push to the local MediaMTX server via RTMP.'],
