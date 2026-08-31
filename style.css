@@ -587,26 +587,28 @@ img { display: block; max-width: 100%; }
 .skill-list li { 
   display: block; 
 }
-.skill-header {
-  display: inline-flex;
-}
 .skill-name { 
-  font-size: 0.88rem; 
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--text-1);
-  background: rgba(77,168,255,0.06);
-  border: 1px solid var(--border);
-  padding: 8px 16px;
-  border-radius: 50px;
-  transition: all var(--transition);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(77,168,255,0.15);
+  padding: 10px 20px;
+  border-radius: 100px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
 }
 .skill-name:hover {
-  background: rgba(77,168,255,0.15);
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-.skill-pct, .skill-bar, .skill-fill {
-  display: none;
+  background: linear-gradient(145deg, rgba(77,168,255,0.15), rgba(124,92,252,0.15));
+  border-color: rgba(77,168,255,0.4);
+  color: #fff;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(77,168,255,0.25), inset 0 0 15px rgba(124,92,252,0.15);
 }
 
 /* ── PROJECTS ── */
